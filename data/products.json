@@ -1,0 +1,54 @@
+[
+	{
+		"id": 0,
+		"title": "product 1 mega",
+		"author": "Anders",
+		"description": "Beskrivelse",
+		"image": "https://picsum.photos/300/300?1",
+		"additionalImages": [
+			"https://picsum.photos/768/400?random=10",
+			"https://picsum.photos/768/400?random=11",
+			"https://picsum.photos/768/400?random=12",
+			"https://picsum.photos/768/400?random=13"
+		]
+	},
+	{
+		"id": 1,
+		"title": "product 2 super",
+		"author": "Anders",
+		"description": "Beskrivelse",
+		"image": "https://picsum.photos/300/300?2",
+		"additionalImages": [
+			"https://picsum.photos/768/400?random=10",
+			"https://picsum.photos/768/400?random=11",
+			"https://picsum.photos/768/400?random=12",
+			"https://picsum.photos/768/400?random=13"
+		]
+	},
+	{
+		"id": 2,
+		"title": "product 3 super",
+		"author": "Anders",
+		"description": "Beskrivelse",
+		"image": "https://picsum.photos/300/300?2",
+		"additionalImages": [
+			"https://picsum.photos/768/400?random=10",
+			"https://picsum.photos/768/400?random=11",
+			"https://picsum.photos/768/400?random=12",
+			"https://picsum.photos/768/400?random=13"
+		]
+	},
+	{
+		"id": 3,
+		"title": "product 3 super",
+		"author": "Anders",
+		"description": "Beskrivelse",
+		"image": "https://picsum.photos/300/300?2",
+		"additionalImages": [
+			"https://picsum.photos/768/400?random=10",
+			"https://picsum.photos/768/400?random=11",
+			"https://picsum.photos/768/400?random=12",
+			"https://picsum.photos/768/400?random=13"
+		]
+	}
+]
