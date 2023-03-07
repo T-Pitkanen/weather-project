@@ -4,11 +4,154 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="scripts/index.js" type="module"></script>
-		<title>Service</title>
+		<link rel="stylesheet" href="styles/style.css" />
+
+		<title>Weather</title>
 	</head>
 	<body>
-		<h1>Products</h1>
-		<div class="item-container">HENTER DATA</div>
+		<div class="weather-container">
+			<div class="side-container">
+				<div class="search-wrapper">
+					<form
+						action=""
+						class="search"
+						id="search
+					"
+					>
+						<input type="text" id="query" placeholder="Search for a city" />
+						<button type="submit" id="submit">
+							<i class="fa-solid fa-magnifying-glass fa-search"></i>
+						</button>
+					</form>
+				</div>
+				<div class="weather-icon">
+					<img src="assets/icons/sun.png" class="icon-large" id="icon" alt="" />
+				</div>
+				<div class="temperature">
+					<h1 id="temp"></h1>
+					<span class="temp-unit">°C</span>
+				</div>
+				<div class="city-date-time">
+					<p id="city"></p>
+					<p id="date-time"></p>
+				</div>
+				<hr />
+				<div class="weather-description">
+					<div class="description">
+						<img src="assets/icons/sun.png" class="icon-small" alt="" />
+						<p id="description">Mostly Sunny</p>
+					</div>
+
+					<div class="rain">
+						<img src="assets/icons/rain.png" class="icon-small" alt="" />
+						<p>Rain &#8203; •</p>
+						<p id="rain">1</p>
+						<span class="rain-unit">%</span>
+					</div>
+				</div>
+			</div>
+			<div class="main-container">
+				<div class="today-wrapper">
+					<h3>Today</h3>
+				</div>
+				<div class="today-cards" id="weather-cards">
+					<div class="card">
+						<h2 class="day-name">Mon</h2>
+						<div class="card-icon">
+							<img src="assets/icons/sun.png" alt="" />
+						</div>
+						<div class="day-temp">
+							<h2 class="temp">15</h2>
+							<span class="temp-unit">°C</span>
+						</div>
+					</div>
+					<div class="card">
+						<h2 class="day-name">Tues</h2>
+						<div class="card-icon">
+							<img src="assets/icons/sun.png" alt="" />
+						</div>
+						<div class="day-temp">
+							<h2 class="temp">15</h2>
+							<span class="temp-unit">°C</span>
+						</div>
+					</div>
+					<div class="card">
+						<h2 class="day-name">Wed</h2>
+						<div class="card-icon">
+							<img src="assets/icons/sun.png" alt="" />
+						</div>
+						<div class="day-temp">
+							<h2 class="temp">15</h2>
+							<span class="temp-unit">°C</span>
+						</div>
+					</div>
+					<div class="card">
+						<h2 class="day-name">Fri</h2>
+						<div class="card-icon">
+							<img src="assets/icons/sun.png" alt="" />
+						</div>
+						<div class="day-temp">
+							<h2 class="temp">15</h2>
+							<span class="temp-unit">°C</span>
+						</div>
+					</div>
+					<div class="card">
+						<h2 class="day-name">Sat</h2>
+						<div class="card-icon">
+							<img src="assets/icons/sun.png" alt="" />
+						</div>
+						<div class="day-temp">
+							<h2 class="temp">15</h2>
+							<span class="temp-unit">°C</span>
+						</div>
+					</div>
+				</div>
+				<div class="today-highlights">
+					<h2>Today's Higlights</h2>
+					<div class="highlight-container">
+						<div class="card2">
+							<h4 class="card-heading">Feels Like</h4>
+							<div class="content">
+								<p class="fl-temp">0</p>
+								<span class="fl-temp-unit">°C</span>
+							</div>
+						</div>
+						<div class="card2">
+							<h4 class="card-heading">Wind</h4>
+							<div class="content">
+								<p class="wind">4</p>
+								<span class="wind-unit">m/s</span>
+							</div>
+						</div>
+						<div class="card2">
+							<h4 class="card-heading">Humidity</h4>
+							<div class="content">
+								<p class="humidity">72</p>
+								<span class="humidity-unit">%</span>
+							</div>
+						</div>
+						<div class="card2">
+							<h4 class="card-heading">Pressure</h4>
+							<div class="content">
+								<p class="pressure">997</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://kit.fontawesome.com/796ad193be.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="scripts/index.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/gh/manuelmhtr/countries-and-timezones@latest/dist/index.min.js"
+			type="text/javascript"
+		></script>
+		<script type="text/javascript">
+			var data = ct.getCountry('MX');
+			console.log(data);
+		</script>
 	</body>
 </html>
