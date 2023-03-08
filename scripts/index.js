@@ -1,14 +1,13 @@
 const timeEl = document.querySelector('#time');
 const dateEl = document.querySelector('#date');
-const tempEl = document.querySelector('#temp');
+
 const APIkey = '6974a09c36ef8aaabfc009e4231a867d';
 const cardsEl = document.querySelector('#weather-cards');
 const currentWeather = document.querySelector('.today-weather');
 
 let cityEl = document.querySelector('#city');
-let weatherIcon = document.querySelector('.weather-icon');
+
 let highlightEl = document.querySelector('.highlight-container');
-let descEl = document.querySelector('.weather-description');
 
 //Getting the date and time
 setInterval(() => {
@@ -143,7 +142,6 @@ function showWeatherData(data) {
 		let futureTemp = Math.floor(data.list[i].main.temp);
 
 		if (i === 0) {
-			// Display current weather data
 			currentWeather.innerHTML = `
       <div class="weather-icon">
         <img src="${icon}" class="icon-large" id="icon" alt="" />
@@ -171,7 +169,6 @@ function showWeatherData(data) {
       </div>
     `;
 		} else if (i < 6) {
-			// Display weather forecast for next few days
 			futureForecast += `
       <div class="card">
         <h2 class="day-name">${formattedTime}</h2>
@@ -187,6 +184,5 @@ function showWeatherData(data) {
 		}
 	}
 
-	// Set the innerHTML of cardsEl to the weather forecast for the next few days
 	cardsEl.innerHTML = futureForecast;
 }

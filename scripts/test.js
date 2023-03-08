@@ -1,5 +1,6 @@
 //WeatherData
 
+/*
 const tempContainer = document.querySelector('#temp');
 const cityContainer = document.querySelector('#city');
 const form = document.querySelector('.search');
@@ -25,4 +26,4 @@ form.addEventListener('submit', function (event) {
 			tempContainer.innerHTML = temp;
 			cityContainer.innerHTML = currentCity;
 		});
-});
+});*/
