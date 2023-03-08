@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "countries-and-timezones": "^3.4.1"
+  },
+  "name": "weather-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T-Pitkanen/weather-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T-Pitkanen/weather-project/issues"
+  },
+  "homepage": "https://github.com/T-Pitkanen/weather-project#readme",
+  "description": ""
+}

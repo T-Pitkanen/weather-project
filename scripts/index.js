@@ -1,108 +1,188 @@
-import service from './service.js';
+const timeEl = document.querySelector('#time');
+const dateEl = document.querySelector('#date');
 
-const pageProduct = document.querySelector('.page-product');
-const itemContainer = document.querySelector('.item-container');
-const products = service.getProducts();
+const APIkey = '6974a09c36ef8aaabfc009e4231a867d';
+const cardsEl = document.querySelector('#weather-cards');
+const currentWeather = document.querySelector('.today-weather');
 
-let productsFromFile = await service.getProductsFromFile();
+let cityEl = document.querySelector('#city');
 
-let productsFromFileNoAwait = service.getProductsFromFile();
+let highlightEl = document.querySelector('.highlight-container');
 
-service.getPokemon('pikachu').then((pokemon) => {
-	const pokemonContainer = document.querySelector('.pokemon-container');
+//Getting the date and time
+setInterval(() => {
+	let now = new Date();
+	let hour = now.getHours();
+	let minute = now.getMinutes();
 
-	console.log(pokemon);
+	let days = [
+		'Sunday',
+		'Monday',
+		'Tuesday',
+		'Wednesday',
+		'Thursday',
+		'Friday',
+		'Saturday',
+	];
 
-	if (pokemonContainer) {
-		pokemonContainer.innerHTML = `<div>
+	let months = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'October',
+		'November',
+		'December',
+	];
 
-        <h1>${pokemon.name}</h1>
-        <ol>
-            
-        ${pokemon.pokemon
-					.map((poke) => {
-						return `<li>${poke.pokemon.name}</li>`;
-					})
-					.join(' ')}
-
-            
-        
-        </ol>
-    </div>`;
+	hour = hour % 24;
+	if (hour < 10) {
+		hour = '0' + hour;
 	}
-});
-// const testPromise = service.myPromise();
-// testPromise.then( (result) => {
+	if (minute < 10) {
+		minute = '0' + minute;
+	}
 
-//     console.log(result);
+	let dayString = days[now.getDay()];
+	let monthString = months[now.getMonth()];
+	let dayNro = now.getUTCDate();
 
-// }).catch( (err) => {
+	timeEl.innerHTML = `${hour}:${minute}`;
+	dateEl.innerHTML = `${dayString}, ${dayNro} ${monthString} `;
 
-//     console.log(err, 'filen kunne ikke hentes');
+	return `${dayString}, ${hour}:${minute}`;
+}, 1000);
 
-// })
+//Getting data from weather api
+function getWeatherData() {
+	navigator.geolocation.getCurrentPosition((success) => {
+		let { latitude, longitude } = success.coords;
 
-const productTmpl = (product) => `<div>
-    <img src="${product.image}"></img>
-    <h1>${product.title}</h1>
-    <p>${product.description}</p>
-    <span>Author:${product.author} </span>
-    <div><a href="product.html?id=${product.id}">Gå til produkt</a></div>
-</div>`;
-
-const productDetailTmpl = (product) => `<div>
-    <img src="${product.image}"></img>
-    <h1>${product.title}</h1>
-    <p>${product.description}</p>
-    <span>Author:${product.author} </span>
-</div>`;
-
-if (itemContainer) {
-	// console.log('productsFromFile', productsFromFile)
-
-	// productsFromFileNoAwait.then( (result) => {
-
-	//     console.log('result', result)
-	//     itemContainer.innerHTML = '';
-	//     result.forEach( (product) => {
-
-	//         itemContainer.innerHTML += productTmpl(product);
-
-	//     });
-
-	// } )
-
-	productsFromFile.forEach((product) => {
-		itemContainer.innerHTML += productTmpl(product);
+		fetch(
+			`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${APIkey}`
+		)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				showWeatherData(data);
+			});
 	});
-
-	// productsFromFile.then(productsInJson => {
-
-	//     console.log(productsInJson)
-
-	//     productsInJson.forEach( (product) => {
-
-	//         itemContainer.innerHTML += productTmpl(product);
-
-	//     });
-
-	// })
-
-	// products.forEach( (product) => {
-
-	//     itemContainer.innerHTML += productTmpl(product);
-
-	// });
 }
+getWeatherData();
 
-if (pageProduct) {
-	let search = location.search;
-	let productID = new URLSearchParams(search).get('id');
+//adding the data into the website
+function showWeatherData(data) {
+	let city = data.city.name;
+	let country = data.city.country;
+	let temp = Math.floor(data.list[0].main.temp);
+	let wind = data.list[0].wind.speed;
+	let { temp_min, temp_max, feels_like, humidity, pressure } =
+		data.list[0].main;
+	let { main } = data.list[0].weather[0];
+	let icon = '';
 
-	const productContainer = document.querySelector('.product-container');
-	const foundProduct = fileProducts.find((product) => product.id == productID);
+	let temp_min_floor = Math.floor(temp_min);
+	let temp_max_floor = Math.floor(temp_max);
+	let feels_like_floored = Math.floor(feels_like);
 
-	productContainer.innerHTML = productDetailTmpl(foundProduct);
+	icon =
+		main === 'Clear'
+			? 'assets/icons/sun.png'
+			: main === 'Clouds'
+			? 'assets/icons/cloud-computing.png'
+			: main === 'Snow'
+			? 'assets/icons/snow.png'
+			: main === 'Thunderstorm'
+			? 'assets/icons/storm.png'
+			: main === 'Drizzle' || main === 'Rain'
+			? 'assets/icons/rain.png'
+			: 'assets/icons/foggy.png';
 
-	console.log('foundProduct', foundProduct);
+	cityEl.innerHTML = `${city}, ${country}`;
+
+	highlightEl.innerHTML = `<div class="card2">
+							<h4 class="card-heading">Feels Like</h4>
+							<div class="content">
+								<p class="fl-temp">${feels_like_floored}</p>
+								<span class="fl-temp-unit">°C</span>
+							</div>
+						</div>
+						<div class="card2">
+							<h4 class="card-heading">Wind</h4>
+							<div class="content">
+								<p class="wind">${wind}</p>
+								<span class="wind-unit">m/s</span>
+							</div>
+						</div>
+						<div class="card2">
+							<h4 class="card-heading">Humidity</h4>
+							<div class="content">
+								<p class="humidity">${humidity}</p>
+								<span class="humidity-unit">%</span>
+							</div>
+						</div>
+						<div class="card2">
+							<h4 class="card-heading">Pressure</h4>
+							<div class="content">
+								<p class="pressure">${pressure}</p>
+							</div>`;
+
+	let futureForecast = '';
+
+	for (let i = 0; i < data.list.length; i++) {
+		let dt = data.list[i].dt;
+		let futureDates = new Date(dt * 1000);
+		let hours = futureDates.getHours();
+
+		let formattedTime = hours + ':00';
+		let futureTemp = Math.floor(data.list[i].main.temp);
+
+		if (i === 0) {
+			currentWeather.innerHTML = `
+      <div class="weather-icon">
+        <img src="${icon}" class="icon-large" id="icon" alt="" />
+      </div>
+      <div class="temperature">
+        <h1 id="temp">${temp}</h1>
+        <span class="temp-unit">°C</span>
+      </div>
+      <div class="weather-description">
+        <div class="description">
+          <p id="description">${main}</p>
+        </div>
+        <div class="min-max">
+          <div class="min">
+            <p>Lowest:</p>
+            <p id="min-temp">${temp_min_floor}</p>
+            <span class="temp-unit">°C</span>
+          </div>
+          <div class="max">
+            <p>Highest:</p>
+            <p id="max-temp">${temp_max_floor}</p>
+            <span class="temp-unit">°C</span>
+          </div>
+        </div>
+      </div>
+    `;
+		} else if (i < 6) {
+			futureForecast += `
+      <div class="card">
+        <h2 class="day-name">${formattedTime}</h2>
+        <div class="card-icon">
+          <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" alt="" />
+        </div>
+        <div class="day-temp">
+          <h2 class="temp">${futureTemp}</h2>
+          <span class="temp-unit">°C</span>
+        </div>
+      </div>
+    `;
+		}
+	}
+
+	cardsEl.innerHTML = futureForecast;
 }

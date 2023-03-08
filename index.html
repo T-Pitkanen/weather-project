@@ -4,11 +4,53 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="scripts/index.js" type="module"></script>
-		<title>Service</title>
+		<link rel="stylesheet" href="styles/style.css" />
+
+		<title>Weather</title>
 	</head>
 	<body>
-		<h1>Products</h1>
-		<div class="item-container">HENTER DATA</div>
+		<div class="weather-container">
+			<div class="side-container">
+				<!-- <div class="search-wrapper">
+					<form
+						action=""
+						class="search"
+						id="search
+					"
+					>
+						<input type="text" id="query" placeholder="Search for a city" />
+						<button type="submit" id="submit">
+							<i class="fa-solid fa-magnifying-glass fa-search"></i>
+						</button>
+					</form>
+				</div> -->
+
+				<div class="city-date-time">
+					<div class="location">
+						<i class="fa-solid fa-location-dot"></i>
+						<p id="city">--</p>
+					</div>
+					<p id="time">--</p>
+					<p id="date">--</p>
+				</div>
+				<div class="today-weather"></div>
+			</div>
+			<div class="main-container">
+				<div class="today-wrapper">
+					<h3>Every 3 hours</h3>
+				</div>
+				<div class="today-cards" id="weather-cards"></div>
+				<div class="today-highlights">
+					<h2>Today's Higlights</h2>
+					<div class="highlight-container"></div>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://kit.fontawesome.com/796ad193be.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+		<script src="scripts/index.js"></script>
 	</body>
 </html>
