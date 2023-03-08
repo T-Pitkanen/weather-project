@@ -2,6 +2,9 @@ const timeEl = document.querySelector('#time');
 const dateEl = document.querySelector('#date');
 const tempEl = document.querySelector('#temp');
 const APIkey = '6974a09c36ef8aaabfc009e4231a867d';
+const cardsEl = document.querySelector('#weather-cards');
+const currentWeather = document.querySelector('.today-weather');
+
 let cityEl = document.querySelector('#city');
 let weatherIcon = document.querySelector('.weather-icon');
 let highlightEl = document.querySelector('.highlight-container');
@@ -55,6 +58,7 @@ setInterval(() => {
 	return `${dayString}, ${hour}:${minute}`;
 }, 1000);
 
+//Getting data from weather api
 function getWeatherData() {
 	navigator.geolocation.getCurrentPosition((success) => {
 		let { latitude, longitude } = success.coords;
@@ -69,9 +73,9 @@ function getWeatherData() {
 			});
 	});
 }
-
 getWeatherData();
 
+//adding the data into the website
 function showWeatherData(data) {
 	let city = data.city.name;
 	let country = data.city.country;
@@ -84,6 +88,8 @@ function showWeatherData(data) {
 
 	let temp_min_floor = Math.floor(temp_min);
 	let temp_max_floor = Math.floor(temp_max);
+	let feels_like_floored = Math.floor(feels_like);
+
 	icon =
 		main === 'Clear'
 			? 'assets/icons/sun.png'
@@ -98,12 +104,11 @@ function showWeatherData(data) {
 			: 'assets/icons/foggy.png';
 
 	cityEl.innerHTML = `${city}, ${country}`;
-	tempEl.innerHTML = `${temp}`;
 
 	highlightEl.innerHTML = `<div class="card2">
 							<h4 class="card-heading">Feels Like</h4>
 							<div class="content">
-								<p class="fl-temp">${feels_like}</p>
+								<p class="fl-temp">${feels_like_floored}</p>
 								<span class="fl-temp-unit">°C</span>
 							</div>
 						</div>
@@ -127,21 +132,61 @@ function showWeatherData(data) {
 								<p class="pressure">${pressure}</p>
 							</div>`;
 
-	descEl.innerHTML = `<div class="description">
-						<p id="description"> ${main}</p>
-					</div>
-					<div class="min-max">
-						<div class="min">
-							<p>Lowest:</p>
-							<p id="min-temp">${temp_min_floor}</p>
-							<span class="temp-unit">°C</span>
-						</div>
-						<div class="max">
-							<p>Highest:</p>
-							<p id="max-temp">${temp_max_floor}</p>
-							<span class="temp-unit">°C</span>
-						</div>
-					</div>`;
+	let futureForecast = '';
 
-	weatherIcon.innerHTML = `<img src="${icon}" class="icon-large" id="icon" alt="" />`;
+	for (let i = 0; i < data.list.length; i++) {
+		let dt = data.list[i].dt;
+		let futureDates = new Date(dt * 1000);
+		let hours = futureDates.getHours();
+
+		let formattedTime = hours + ':00';
+		let futureTemp = Math.floor(data.list[i].main.temp);
+
+		if (i === 0) {
+			// Display current weather data
+			currentWeather.innerHTML = `
+      <div class="weather-icon">
+        <img src="${icon}" class="icon-large" id="icon" alt="" />
+      </div>
+      <div class="temperature">
+        <h1 id="temp">${temp}</h1>
+        <span class="temp-unit">°C</span>
+      </div>
+      <div class="weather-description">
+        <div class="description">
+          <p id="description">${main}</p>
+        </div>
+        <div class="min-max">
+          <div class="min">
+            <p>Lowest:</p>
+            <p id="min-temp">${temp_min_floor}</p>
+            <span class="temp-unit">°C</span>
+          </div>
+          <div class="max">
+            <p>Highest:</p>
+            <p id="max-temp">${temp_max_floor}</p>
+            <span class="temp-unit">°C</span>
+          </div>
+        </div>
+      </div>
+    `;
+		} else if (i < 6) {
+			// Display weather forecast for next few days
+			futureForecast += `
+      <div class="card">
+        <h2 class="day-name">${formattedTime}</h2>
+        <div class="card-icon">
+          <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" alt="" />
+        </div>
+        <div class="day-temp">
+          <h2 class="temp">${futureTemp}</h2>
+          <span class="temp-unit">°C</span>
+        </div>
+      </div>
+    `;
+		}
+	}
+
+	// Set the innerHTML of cardsEl to the weather forecast for the next few days
+	cardsEl.innerHTML = futureForecast;
 }

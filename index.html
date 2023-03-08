@@ -24,6 +24,7 @@
 						</button>
 					</form>
 				</div>
+
 				<div class="city-date-time">
 					<div class="location">
 						<i class="fa-solid fa-location-dot"></i>
@@ -32,21 +33,14 @@
 					<p id="time">--</p>
 					<p id="date">--</p>
 				</div>
-				<div class="weather-icon">
-					<!-- <img src="assets/icons/sun.png" class="icon-large" id="icon" alt="" /> -->
-				</div>
-				<div class="temperature">
-					<h1 id="temp">--</h1>
-					<span class="temp-unit">°C</span>
-				</div>
-				<div class="weather-description"></div>
+				<div class="today-weather"></div>
 			</div>
 			<div class="main-container">
 				<div class="today-wrapper">
-					<h3>Today</h3>
+					<h3>Every 3 hours</h3>
 				</div>
 				<div class="today-cards" id="weather-cards">
-					<div class="card">
+					<!-- <div class="card">
 						<h2 class="day-name">Mon</h2>
 						<div class="card-icon">
 							<img src="assets/icons/sun.png" alt="" />
@@ -95,7 +89,7 @@
 							<h2 class="temp">15</h2>
 							<span class="temp-unit">°C</span>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="today-highlights">
 					<h2>Today's Higlights</h2>
@@ -107,6 +101,7 @@
 			src="https://kit.fontawesome.com/796ad193be.js"
 			crossorigin="anonymous"
 		></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 		<script src="scripts/index.js"></script>
 	</body>
 </html>
