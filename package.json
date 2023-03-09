@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "countries-and-timezones": "^3.4.1"
+    "countries-and-timezones": "^3.4.1",
+    "glider-js": "^1.7.8"
   },
   "name": "weather-project",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

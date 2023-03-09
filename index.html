@@ -5,6 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="stylesheet" href="styles/responsive.css" />
+		<link rel="stylesheet" href="./node_modules/glider-js/glider.min.css" />
 
 		<title>Weather</title>
 	</head>
@@ -37,9 +39,12 @@
 			</div>
 			<div class="main-container">
 				<div class="today-wrapper">
-					<h3>Every 3 hours</h3>
+					<h3></h3>
 				</div>
-				<div class="today-cards" id="weather-cards"></div>
+				<div class="glider-contain" id="weather-cards">
+					<div class="today-cards glider"></div>
+				</div>
+
 				<div class="today-highlights">
 					<h2>Today's Higlights</h2>
 					<div class="highlight-container"></div>
@@ -50,7 +55,8 @@
 			src="https://kit.fontawesome.com/796ad193be.js"
 			crossorigin="anonymous"
 		></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-		<script src="scripts/index.js"></script>
+
+		<script src="scripts/index.js" type="module"></script>
+		<script src="./node_modules/glider-js/glider.min.js" type="module"></script>
 	</body>
 </html>
