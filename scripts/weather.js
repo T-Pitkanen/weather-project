@@ -155,14 +155,15 @@ function showWeatherData(data) {
           <p id="description">${main}</p>
         </div>
         <div class="min-max">
-          <div class="min">
-            <p>Lowest:</p>
-            <p id="min-temp">${temp_min_floor}</p>
-            <span class="temp-unit">°C</span>
-          </div>
+        
           <div class="max">
             <p>Highest:</p>
             <p id="max-temp">${temp_max_floor}</p>
+            <span class="temp-unit">°C</span>
+          </div>  
+					<div class="min">
+            <p>Lowest:</p>
+            <p id="min-temp">${temp_min_floor}</p>
             <span class="temp-unit">°C</span>
           </div>
         </div>
