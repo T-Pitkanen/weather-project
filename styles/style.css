@@ -17,6 +17,12 @@ a {
 	color: white;
 }
 
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
 body {
 	height: 100vh;
 	width: 100%;
@@ -64,6 +70,7 @@ body {
 	padding-top: 4vh;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
+	margin-left: 1vw;
 }
 
 .search {
@@ -96,6 +103,13 @@ body {
 .fa-search {
 	font-size: 1rem;
 	color: white;
+}
+
+.fa-current {
+	font-size: 1.5rem;
+	padding-top: 1vh;
+	padding-left: 1vw;
+	color: #4f8fe4;
 }
 
 /* Icon */

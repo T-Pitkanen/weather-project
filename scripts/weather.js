@@ -5,13 +5,13 @@ const local = document.querySelector('.local');
 const cancun = document.querySelector('.cancun');
 const madrid = document.querySelector('.madrid');
 const newYork = document.querySelector('.newyork');
-
+const current = document.querySelector('.fa-current');
 const APIkey = '6974a09c36ef8aaabfc009e4231a867d';
 const cardsEl = document.querySelector('.glider');
 const currentWeather = document.querySelector('.today-weather');
 
 let cityEl = document.querySelector('#city');
-
+let input = document.querySelector('#query');
 let highlightEl = document.querySelector('.highlight-container');
 
 //Getting the date and time
@@ -318,12 +318,10 @@ function showWeatherData(data) {
 				</div>`;
 		}
 	}
-
 	cardsEl.innerHTML = futureForecast;
 }
 
 const form = document.querySelector('.search');
-let input = document.querySelector('#query');
 
 function searchCity(event) {
 	event.preventDefault();
