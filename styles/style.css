@@ -12,6 +12,11 @@ hr {
 	opacity: 0.5;
 }
 
+a {
+	text-decoration: none;
+	color: white;
+}
+
 body {
 	height: 100vh;
 	width: 100%;
@@ -235,6 +240,7 @@ body {
 
 .day-temp {
 	display: flex;
+	align-items: center;
 	padding: 0.5rem;
 }
 
@@ -243,10 +249,20 @@ body {
 	font-weight: 500;
 }
 
+.future-weather-desc {
+	padding-left: 0.6vw;
+	font-size: 0.8rem;
+	color: rgba(43, 43, 43, 0.842);
+}
+
 /* Highlight */
 
 .today-highlights {
 	margin-top: 8vh;
+}
+
+.card-heading {
+	opacity: 0.9;
 }
 
 .today-highlights h2 {
@@ -285,7 +301,7 @@ body {
 
 .content {
 	display: flex;
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 }
 
 /* Holiday */
@@ -313,4 +329,86 @@ body {
 	border-radius: 20px;
 	width: 100%;
 	height: auto;
+}
+
+/* Holiday */
+
+.holiday {
+	margin-top: 10vh;
+}
+
+
+.holiday-card-container {
+	padding: 0 5vw;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	justify-items: center;
+	align-items: center;
+}
+
+.card3 {
+	position: relative;
+	max-width: 70%;
+	overflow: hidden;
+	height: auto;
+	border-radius: 20px;
+}
+
+.card3 img {
+	object-fit: cover;
+	border-radius: 20px;
+	width: 100%;
+	height: auto;
+}
+
+.top-layout-card {
+	padding-top: 1vh;
+	opacity: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.top-layout-card span {
+	font-weight: 400;
+	padding-left: 0.5vw;
+}
+
+.top-layout-card h4 {
+	height: auto;
+	font-weight: 500;
+}
+
+
+img {
+	transition: .5s ease all;
+	width: 100%;
+	object-fit: cover;
+}
+
+
+.card3::after {
+	content: '';
+	color: white;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #545454;
+	opacity: 0;
+	transition: .5s ease all;
+}
+
+.card3:hover img {
+	transform: scale(1.1);
+}
+
+.card3:hover::after {
+	opacity: 0.35;
 }
