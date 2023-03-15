@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../styles/style.css" />
+		<link rel="stylesheet" href="../styles/responsive.css" />
+		<link rel="stylesheet" href="../styles/glider.min.css" />
+
+		<title>Weather</title>
+	</head>
+	<body>
+		<div class="weather-container madrid others">
+			<div class="side-container">
+				<div class="search-wrapper">
+					<form
+						action=""
+						class="search"
+						id="search
+					"
+					>
+						<input type="text" id="query" placeholder="Search for a city" />
+						<button type="submit" id="submit">
+							<i class="fa-solid fa-magnifying-glass fa-search"></i>
+						</button>
+					</form>
+					<button id="current-location">
+						<a href="/index.html"
+							><i class="fa-solid fa-location-dot fa-current"></i
+						></a>
+					</button>
+				</div>
+
+				<div class="city-date-time">
+					<div class="location">
+						<i class="fa-solid fa-location-dot"></i>
+						<p id="city">--</p>
+					</div>
+					<p id="time">--</p>
+					<p id="date">--</p>
+				</div>
+				<div class="today-weather"></div>
+			</div>
+			<div class="main-container">
+				<div class="today-wrapper">
+					<h3></h3>
+				</div>
+				<div class="glider-contain" id="weather-cards">
+					<div class="today-cards glider"></div>
+				</div>
+
+				<div class="today-highlights">
+					<h2>Today's Higlights</h2>
+					<div class="highlight-container"></div>
+				</div>
+				<div class="holiday">
+					<div class="holiday-card-container">
+						<div class="card3">
+							<div class="top-layout-card">
+								<h4>
+									<a href="/pages/cancun.html">Cancún <span>Mexico</span></a>
+								</h4>
+							</div>
+							<img src="../assets/pexels-tellez-erik-12956666.jpg" alt="" />
+						</div>
+						<div class="card3">
+							<div class="top-layout-card">
+								<h4>
+									<a href="/pages/newyork.html">New York <span>USA</span></a>
+								</h4>
+							</div>
+							<img src="../assets/pexels-lukas-kloeppel-466685.jpg" alt="" />
+						</div>
+						<div class="card3">
+							<div class="top-layout-card">
+								<h4>
+									<a href="/pages/madrid.html">Madrid <span>Spain</span></a>
+								</h4>
+							</div>
+							<img src="../assets/pexels-alex-azabache-3757144.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="https://kit.fontawesome.com/796ad193be.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- <script src="scripts/index.js" type="module"></script> -->
+		<script src="../scripts/glider/glider.js" type="module"></script>
+		<script src="../scripts/weather.js" type="module"></script>
+		<script src="../scripts/glider/glider.min.js" type="module"></script>
+	</body>
+</html>

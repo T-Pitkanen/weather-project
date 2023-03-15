@@ -11,9 +11,9 @@
 		<title>Weather</title>
 	</head>
 	<body>
-		<div class="weather-container">
+		<div class="local weather-container">
 			<div class="side-container">
-				<!-- <div class="search-wrapper">
+				<div class="search-wrapper">
 					<form
 						action=""
 						class="search"
@@ -25,11 +25,15 @@
 							<i class="fa-solid fa-magnifying-glass fa-search"></i>
 						</button>
 					</form>
-				</div> -->
+					<div class="current-location">
+						<button id="current-location">
+							<i class="fa-solid fa-location-dot fa-current"></i>
+						</button>
+					</div>
+				</div>
 
 				<div class="city-date-time">
 					<div class="location">
-						<i class="fa-solid fa-location-dot"></i>
 						<p id="city">--</p>
 					</div>
 					<p id="time">--</p>
@@ -52,13 +56,28 @@
 				<div class="holiday">
 					<div class="holiday-card-container">
 						<div class="card3">
+							<div class="top-layout-card">
+								<h4>
+									<a href="./pages/cancun.html">Cancún <span>Mexico</span></a>
+								</h4>
+							</div>
 							<img src="assets/pexels-tellez-erik-12956666.jpg" alt="" />
 						</div>
 						<div class="card3">
+							<div class="top-layout-card">
+								<h4>
+									<a href="./pages/newyork.html">New York <span>USA</span></a>
+								</h4>
+							</div>
 							<img src="assets/pexels-lukas-kloeppel-466685.jpg" alt="" />
 						</div>
 						<div class="card3">
-							<img src="assets/pexels-khairul-leon-695779.jpg" alt="" />
+							<div class="top-layout-card">
+								<h4>
+									<a href="./pages/madrid.html">Madrid<span>Spain</span></a>
+								</h4>
+							</div>
+							<img src="assets/pexels-alex-azabache-3757144.jpg" alt="" />
 						</div>
 					</div>
 				</div>
@@ -71,8 +90,8 @@
 		></script>
 
 		<!-- <script src="scripts/index.js" type="module"></script> -->
-		<script src="scripts/glider.js" type="module"></script>
+		<script src="scripts/glider/glider.js" type="module"></script>
 		<script src="scripts/weather.js" type="module"></script>
-		<script src="scripts/glider.min.js" type="module"></script>
+		<script src="scripts/glider/glider.min.js" type="module"></script>
 	</body>
 </html>
