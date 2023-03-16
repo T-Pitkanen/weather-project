@@ -181,29 +181,28 @@ function showWeatherData(data) {
 		data.list[0].main;
 	let { main } = data.list[0].weather[0];
 	let icon = '';
-
 	let temp_min_floor = Math.floor(temp_min);
 	let temp_max_floor = Math.floor(temp_max);
 	let feels_like_floored = Math.floor(feels_like);
 
 	switch (main) {
 		case 'Clear':
-			icon = 'assets/icons/sun.png';
+			icon = '/assets/icons/sun.png';
 			break;
 		case 'Clouds':
-			icon = 'assets/icons/cloud-computing.png';
+			icon = '/assets/icons/cloud-computing.png';
 			break;
 		case 'Snow':
-			icon = 'assets/icons/snow.png';
+			icon = '/assets/icons/snow.png';
 			break;
 		case 'Thunderstorm':
-			icon = 'assets/icons/storm.png';
+			icon = '/assets/icons/storm.png';
 			break;
 		case 'Drizzle':
-			icon = 'assets/icons/rain.png';
+			icon = '/assets/icons/rain.png';
 			break;
 		case 'Rain':
-			icon = 'assets/icons/rain.png';
+			icon = '/assets/icons/rain.png';
 			break;
 	}
 
