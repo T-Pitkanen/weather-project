@@ -188,7 +188,6 @@ function showWeatherData(data) {
 
 	switch (main) {
 		case 'Clear':
-<<<<<<< HEAD
 			icon = 'assets/icons/sun.png';
 			break;
 		case 'Clouds':
@@ -205,24 +204,6 @@ function showWeatherData(data) {
 			break;
 		case 'Rain':
 			icon = 'assets/icons/rain.png';
-=======
-			icon = '../assets/icons/sun.png';
-			break;
-		case 'Clouds':
-			icon = '../assets/icons/cloud-computing.png';
-			break;
-		case 'Snow':
-			icon = '../assets/icons/snow.png';
-			break;
-		case 'Thunderstorm':
-			icon = '../assets/icons/storm.png';
-			break;
-		case 'Drizzle':
-			icon = '../assets/icons/rain.png';
-			break;
-		case 'Rain':
-			icon = '../assets/icons/rain.png';
->>>>>>> 1380c57c16eaf533bcf8e093221c562ed1a3bd8e
 			break;
 	}
 
