@@ -5,7 +5,6 @@ const local = document.querySelector('.local');
 const cancun = document.querySelector('.cancun');
 const madrid = document.querySelector('.madrid');
 const newYork = document.querySelector('.newyork');
-const current = document.querySelector('.fa-current');
 const APIkey = '6974a09c36ef8aaabfc009e4231a867d';
 const cardsEl = document.querySelector('.glider');
 const currentWeather = document.querySelector('.today-weather');
@@ -286,12 +285,12 @@ function showWeatherData(data) {
         <div class="min-max">
         
           <div class="max">
-            <p>Highest:</p>
+            <p>H:</p>
             <p id="max-temp">${temp_max_floor}</p>
             <span class="temp-unit">°C</span>
           </div>  
 					<div class="min">
-            <p>Lowest:</p>
+            <p>L:</p>
             <p id="min-temp">${temp_min_floor}</p>
             <span class="temp-unit">°C</span>
           </div>
@@ -309,11 +308,14 @@ function showWeatherData(data) {
 						/>
 					</div>
 					<div class="day-temp">
+					<div class="future-weather-desc">
 						<h2 class="temp">${futureTemp}</h2>
 						<span class="temp-unit">°C</span>
-						<span class="future-weather-desc">
-							${data.list[i].weather[0].description}
-						</span>
+					</div>
+							<span>
+								${data.list[i].weather[0].description}
+							</span>
+						
 					</div>
 				</div>`;
 		}
