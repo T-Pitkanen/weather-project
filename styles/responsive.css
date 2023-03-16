@@ -1,0 +1,400 @@
+@media (max-width:481px) {
+
+  body {
+    height: 100%;
+  }
+
+  .weather-container {
+    margin: 3vh 0;
+    height: auto;
+    flex-direction: column;
+
+  }
+
+  /* Side container */
+
+  .side-container {
+    width: 100%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-bottom: 5vh;
+  }
+
+
+  /* Search */
+
+  .search-wrapper {
+    margin-left: 3vw;
+  }
+
+  .fa-current {
+    padding-left: 4vw;
+    color: #4f8fe4;
+  }
+
+  /* Icon */
+
+  .weather-icon {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 3rem;
+    width: 100%;
+  }
+
+  .icon-large {
+    width: 80%;
+  }
+
+
+  /* City Date and Time */
+
+  .city-date-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+  }
+
+  #time {
+    font-size: 2.5rem;
+  }
+
+  .location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+  }
+
+  /* Description */
+
+  .weather-description {
+    gap: 2vh;
+  }
+
+  .min-max {
+    display: flex;
+    flex-direction: row;
+    gap: 3vh;
+  }
+
+  .min,
+  .max {
+    gap: 2vw;
+  }
+
+  .day-temp {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .day-temp span {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+
+  /* Today */
+
+  .main-container {
+    width: 95%;
+    padding-bottom: 3vh;
+  }
+
+  .glider {
+    grid-template-columns: repeat(10, 30%);
+  }
+
+  /* Highlight */
+
+  .today-highlights {
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .today-highlights h2 {
+    padding-left: 6vw;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .highlight-container {
+    width: 100%;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 2vw;
+    row-gap: 2vh;
+    margin-top: 0vh;
+  }
+
+  .destinations-card-container {
+    grid-template-columns: repeat(2, auto);
+    column-gap: 2vw;
+
+  }
+
+  .card3 {
+    max-width: 100%;
+  }
+
+  .top-layout-card h4 {
+    font-size: smaller;
+  }
+
+}
+
+@media (min-width: 767px) and (max-width:1023px) {
+
+  body {
+    height: 100%;
+  }
+
+  .weather-container {
+    margin: 3vh 0;
+    height: auto;
+    flex-direction: column;
+
+  }
+
+  /* Side container */
+
+  .side-container {
+    width: 100%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-bottom: 5vh;
+  }
+
+
+  /* Search */
+
+  .search-wrapper {
+    margin-left: 3vw;
+  }
+
+  .fa-current {
+    padding-left: 4vw;
+    color: #4f8fe4;
+  }
+
+  /* Icon */
+
+  .weather-icon {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 3rem;
+    width: 100%;
+  }
+
+  .icon-large {
+    width: 50%;
+  }
+
+
+  /* City Date and Time */
+
+  .city-date-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+  }
+
+  #time {
+    font-size: 2.5rem;
+  }
+
+  .location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+  }
+
+  /* Description */
+
+  .weather-description {
+    gap: 2vh;
+  }
+
+  .min-max {
+    display: flex;
+    flex-direction: row;
+    gap: 3vh;
+  }
+
+  .min,
+  .max {
+    gap: 2vw;
+  }
+
+  .day-temp {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .day-temp span {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+
+  /* Today */
+
+  .main-container {
+    width: 95%;
+    padding-bottom: 3vh;
+  }
+
+  .glider {
+    grid-template-columns: repeat(10, 30%);
+  }
+
+  /* Highlight */
+
+  .today-highlights {
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .today-highlights h2 {
+    padding-left: 0vw;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .highlight-container {
+    width: 100%;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 2vw;
+    row-gap: 2vh;
+    margin-top: 0vh;
+  }
+
+  .destinations-card-container {
+    grid-template-columns: repeat(2, auto);
+    column-gap: 2vw;
+  }
+
+  .card3 {
+    max-width: 100%;
+  }
+
+
+}
+
+@media (min-width: 1024px) and (max-width:1279px) {
+  .weather-container {
+    width: 95%;
+  }
+
+  .search-wrapper {
+    height: auto;
+  }
+
+  .search input {
+    width: 70%;
+  }
+
+  .search button {
+    margin-left: 1vw;
+  }
+
+  .city-date-time {
+    font-size: smaller;
+    padding-top: 3vh;
+  }
+
+  .today-wrapper {
+    padding-top: 0;
+  }
+
+  .weather-icon {
+    padding: 0 1vw;
+  }
+
+  .weather-description {
+    padding-top: 1vh;
+    gap: 2vh;
+  }
+
+  .min-max {
+    font-size: smaller;
+    gap: 1vh;
+  }
+
+  .day-temp {
+    font-size: smaller;
+  }
+
+  .day-temp span {
+    text-align: center;
+  }
+
+  .today-cards {
+    grid-template-columns: repeat(10, 25%);
+  }
+
+  .highlight-container {
+    grid-template-columns: repeat(4, 23%);
+    column-gap: 3vw;
+  }
+
+  .today-highlights {
+    margin-top: 5vh;
+  }
+
+  .card3 {
+    max-width: 75%;
+  }
+
+  .destinations {
+    margin-top: 7vh;
+    margin-bottom: 3vh;
+  }
+
+  .destinations-card-container {
+    padding: 0 2vw;
+
+  }
+}
+
+@media (min-width: 1280px) and (max-width:1440px) {
+  .weather-container {
+    width: 95%;
+  }
+
+  .search input {
+    width: 70%;
+  }
+
+  .search button {
+    margin-left: 1vw;
+  }
+
+  .destinations {
+    margin-top: 7vh;
+  }
+
+  .day-temp {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .card-icon img {
+    width: 50%;
+  }
+
+  .day-temp span {
+    text-align: center;
+  }
+
+  .day-temp span {
+    font-size: smaller;
+  }
+}

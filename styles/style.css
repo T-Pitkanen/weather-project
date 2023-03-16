@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import 'variables.css';
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+hr {
+	opacity: 0.5;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+body {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Poppins', sans-serif;
+	background-image: linear-gradient(100deg, #74EBD5, #9FACE6);
+}
+
+/* Container */
+
+.weather-container {
+	background: rgba(250, 250, 250, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	width: 90%;
+	height: 90%;
+	border-radius: 50px;
+	display: flex;
+	/* background-color: var(--container-bg-color); */
+}
+
+/* Side container */
+
+.side-container {
+	height: 100%;
+	width: 20%;
+	border-bottom-left-radius: 50px;
+	border-top-left-radius: 50px;
+	background-color: rgba(255, 255, 255, 0.829);
+}
+
+/* Search */
+
+.search-wrapper {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 10vh;
+	padding: 1rem;
+	padding-top: 4vh;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin-left: 1vw;
+}
+
+.search {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: white;
+}
+
+.search input {
+	padding: 0.5rem;
+	padding-left: 1rem;
+	border: none;
+}
+
+.search input:focus {
+	outline: none;
+}
+
+.search button {
+	border: none;
+	cursor: pointer;
+	height: 100%;
+	width: auto;
+	padding: 0.5rem;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: var(--button-accent);
+}
+
+.fa-search {
+	font-size: 1rem;
+	color: white;
+}
+
+.fa-current {
+	font-size: 1.5rem;
+	padding-left: 1vw;
+	color: #4f8fe4;
+}
+
+.current-location {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Icon */
+
+.weather-icon {
+	padding: 1.5rem 3rem;
+}
+
+.icon-large {
+	padding: 1rem;
+	width: 100%;
+}
+
+/* City Date and Time */
+
+.temperature {
+	display: flex;
+	padding-left: 1vw;
+	justify-content: center;
+}
+
+.temperature h1 {
+	font-weight: 300;
+	font-size: 3rem;
+}
+
+.city-date-time {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 5vh;
+}
+
+#time {
+	font-size: 2.5rem;
+}
+
+.location {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5vw;
+}
+
+/* Description */
+
+.weather-description {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 2vh;
+	gap: 5vh;
+}
+
+.min-max {
+	display: flex;
+	flex-direction: column;
+	gap: 2vh;
+}
+
+.min,
+.max {
+	display: flex;
+	gap: 0.5vw;
+}
+
+.min p {
+	opacity: 0.8;
+}
+
+.icon-small {
+	width: 10%;
+	height: auto;
+}
+
+.description {
+	display: flex;
+	justify-content: center;
+	gap: 1vw;
+	font-size: 1.2rem;
+	align-items: center;
+}
+
+/* Today */
+
+.main-container {
+	width: 80%;
+}
+
+.today-wrapper {
+	width: 100%;
+	padding-top: 2rem;
+	padding-left: 2rem;
+}
+
+.today-wrapper h3 {
+	padding-left: 5vw;
+	font-weight: 500;
+}
+
+/* Today Cards */
+
+
+.glider-contain {
+	padding-top: 5vh;
+}
+
+.today-cards {
+	display: grid;
+	grid-template-columns: repeat(10, 20%);
+	column-gap: 3vw;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	margin-top: 5vh;
+}
+
+.card-icon {
+	display: flex;
+}
+
+.card-icon img {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.card {
+	background: rgba(255, 255, 255, 0.37);
+
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	display: flex;
+	border-radius: 20px;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.day-name {
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 0.5rem;
+}
+
+.day-temp {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+	gap: 1vw;
+}
+
+.temp {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.future-weather-desc {
+	padding-left: 0.6vw;
+	display: flex;
+	font-size: 0.8rem;
+	color: rgba(43, 43, 43, 0.842);
+}
+
+/* Highlight */
+
+.today-highlights {
+	margin-top: 8vh;
+}
+
+.card-heading {
+	opacity: 0.9;
+}
+
+.today-highlights h2 {
+	padding-left: 6vw;
+	font-size: 1.2rem;
+	font-weight: 500;
+	padding-bottom: 2vh;
+}
+
+.highlight-container {
+	display: grid;
+	grid-template-columns: repeat(4, 20%);
+	column-gap: 4vw;
+	padding-left: 5vw;
+	padding-right: 5vw;
+
+}
+
+.card2 {
+	background: rgba(255, 255, 255, 0.37);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	display: flex;
+	border-radius: 20px;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 1vh;
+	padding: 2rem;
+}
+
+.card2 h4 {
+	font-weight: 500;
+	color: rgb(54, 54, 54);
+}
+
+.content {
+	display: flex;
+	font-size: 1.4rem;
+}
+
+
+/* Other Destinations */
+
+.destinations {
+	margin-top: 10vh;
+}
+
+.destinations-card-container {
+	padding: 0 5vw;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	justify-items: center;
+	align-items: center;
+}
+
+.card3 {
+	position: relative;
+	max-width: 70%;
+	overflow: hidden;
+	height: auto;
+	border-radius: 20px;
+}
+
+.card3 img {
+	object-fit: cover;
+	border-radius: 20px;
+	width: 100%;
+	height: auto;
+}
+
+.top-layout-card {
+	padding-top: 1vh;
+	opacity: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.top-layout-card span {
+	font-weight: 400;
+	padding-left: 0.5vw;
+}
+
+.top-layout-card h4 {
+	height: auto;
+	font-weight: 500;
+}
+
+
+img {
+	transition: .5s ease all;
+	width: 100%;
+	object-fit: cover;
+}
+
+
+.card3::after {
+	content: '';
+	color: white;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #545454;
+	opacity: 0;
+	transition: .5s ease all;
+}
+
+.card3:hover img {
+	transform: scale(1.1);
+}
+
+.card3:hover::after {
+	opacity: 0.35;
+}
