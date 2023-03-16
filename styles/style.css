@@ -38,8 +38,6 @@ body {
 .weather-container {
 	background: rgba(250, 250, 250, 0.25);
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(4px);
-	-webkit-backdrop-filter: blur(4px);
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.18);
 	width: 90%;
@@ -107,9 +105,14 @@ body {
 
 .fa-current {
 	font-size: 1.5rem;
-	padding-top: 1vh;
 	padding-left: 1vw;
 	color: #4f8fe4;
+}
+
+.current-location {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* Icon */
@@ -167,13 +170,17 @@ body {
 .min-max {
 	display: flex;
 	flex-direction: column;
-	gap: 3vh;
+	gap: 2vh;
 }
 
 .min,
 .max {
 	display: flex;
 	gap: 0.5vw;
+}
+
+.min p {
+	opacity: 0.8;
 }
 
 .icon-small {
@@ -256,6 +263,7 @@ body {
 	display: flex;
 	align-items: center;
 	padding: 0.5rem;
+	gap: 1vw;
 }
 
 .temp {
@@ -265,6 +273,7 @@ body {
 
 .future-weather-desc {
 	padding-left: 0.6vw;
+	display: flex;
 	font-size: 0.8rem;
 	color: rgba(43, 43, 43, 0.842);
 }
@@ -318,41 +327,14 @@ body {
 	font-size: 1.4rem;
 }
 
-/* Holiday */
 
-.holiday {
+/* Other Destinations */
+
+.destinations {
 	margin-top: 10vh;
 }
 
-
-.holiday-card-container {
-	padding: 0 5vw;
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	justify-items: center;
-	align-items: center;
-
-}
-
-.card3 {
-	width: 80%;
-}
-
-.card3 img {
-	object-fit: cover;
-	border-radius: 20px;
-	width: 100%;
-	height: auto;
-}
-
-/* Holiday */
-
-.holiday {
-	margin-top: 10vh;
-}
-
-
-.holiday-card-container {
+.destinations-card-container {
 	padding: 0 5vw;
 	display: grid;
 	grid-template-columns: repeat(3, auto);
