@@ -397,4 +397,72 @@
   .day-temp span {
     font-size: smaller;
   }
+  
+  @media (min-width: 1441px) and (max-width:1920px) {
+  .weather-container {
+    width: 95%;
+  }
+
+  .search-wrapper {
+    margin-left: 0;
+  }
+
+  .search {
+    width: 65%;
+  }
+
+  .search input {
+    width: 100%;
+    position: relative;
+  }
+
+
+  .search button {
+    height: auto;
+    position: absolute;
+
+  }
+
+  .glider-contain {
+    padding-top: 1vh;
+  }
+
+  .weather-icon {
+    padding: 0.5rem 3rem;
+  }
+
+  .destinations {
+    margin-top: 7vh;
+  }
+
+  .day-temp {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .card-icon img {
+    width: 50%;
+  }
+
+  .day-temp span {
+    text-align: center;
+  }
+
+  .weather-description {
+    gap: 2vh;
+    padding-top: 0;
+  }
+
+  .today-highlights {
+    margin-top: 6vh;
+  }
+
+  .min-max {
+    gap: 2vw;
+    flex-direction: row;
+  }
+
+  .day-temp span {
+    font-size: smaller;
+  }
 }
