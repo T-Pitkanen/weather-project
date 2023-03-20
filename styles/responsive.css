@@ -397,6 +397,7 @@
   .day-temp span {
     font-size: smaller;
   }
+}
   
   @media (min-width: 1441px) and (max-width:1919px) {
   .weather-container {
