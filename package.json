@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "countries-and-timezones": "^3.4.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "glider-js": "^1.7.8"
   },
   "name": "weather-project",

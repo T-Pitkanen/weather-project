@@ -1,3 +1,5 @@
+import { APIkey } from './key.js';
+
 const timeEl = document.querySelector('#time');
 const dateEl = document.querySelector('#date');
 const others = document.querySelector('.others');
@@ -5,15 +7,14 @@ const local = document.querySelector('.local');
 const cancun = document.querySelector('.cancun');
 const madrid = document.querySelector('.madrid');
 const newYork = document.querySelector('.newyork');
-const APIkey = '6974a09c36ef8aaabfc009e4231a867d';
 const cardsEl = document.querySelector('.glider');
 const currentWeather = document.querySelector('.today-weather');
-
 let cityEl = document.querySelector('#city');
 let input = document.querySelector('#query');
 let highlightEl = document.querySelector('.highlight-container');
 
-//Getting the date and time
+///
+
 // setInterval(() => {
 let now = new Date();
 let hour = now.getHours();
