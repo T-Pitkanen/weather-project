@@ -1,5 +1,3 @@
-import { APIkey } from './key.js';
-
 const timeEl = document.querySelector('#time');
 const dateEl = document.querySelector('#date');
 const others = document.querySelector('.others');
@@ -12,7 +10,7 @@ const currentWeather = document.querySelector('.today-weather');
 let cityEl = document.querySelector('#city');
 let input = document.querySelector('#query');
 let highlightEl = document.querySelector('.highlight-container');
-
+const APIkey = "6974a09c36ef8aaabfc009e4231a867d";
 ///
 
 // setInterval(() => {
